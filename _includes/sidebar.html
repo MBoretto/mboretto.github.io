@@ -1,0 +1,51 @@
+<div class="sidebar">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1>
+        <a href="{{ site.baseurl }}">
+          {{ site.title }}
+        </a>
+      </h1>
+      <p class="lead">{{ site.description }}</p>
+    </div>
+
+    <nav class="sidebar-nav">
+      <a class="sidebar-nav-item{% if page.url == site.baseurl %} active{% endif %}" href="{{ site.baseurl }}">Blog</a>
+
+      {% comment %}
+        The code below dynamically generates a sidebar nav of pages with
+        `layout: page` in the front-matter. See readme for usage.
+      {% endcomment %}
+
+      {% assign pages_list = site.pages %}
+      {% for node in pages_list %}
+        {% if node.title != null %}
+          {% if node.layout == "page" %}
+            {% unless node.exclude %}
+              <a class="sidebar-nav-item{% if page.url == node.url %} active{% endif %}" href="{{ node.url }}">{{ node.title }}</a>
+            {% endunless %}
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+
+      <!--<a class="sidebar-nav-item" href="{{ site.github.repo }}/archive/v{{ site.version }}.zip">Download</a>
+      <a class="sidebar-nav-item" href="{{ site.github.repo }}">GitHub project</a>
+      <span class="sidebar-nav-item">Currently v{{ site.version }}</span>-->
+    </nav>
+
+    <div class="footer-social-icons">
+        <ul class="social-icons">
+            <li><a class="social-icon" target="_blanck" href="mailto:{{ site.author.email }}" title="E-Mail me"> <i class="fa fa-at"></i></a></li>
+            <li><a class="social-icon" target="_blanck" href="{{ site.author.github }}" title="Marco Boretto on GitHub"> <i class="fa fa-github"></i></a></li>
+            <li><a class="social-icon" target="_blanck" href="{{ site.author.twitter }}" title="Marco Boretto on Twitter"> <i class="fa fa-twitter"></i></a></li>
+            <li><a class="social-icon" target="_blanck" href="{{ site.author.medium }}" title="Marco Boretto on Twitter"> <i class="fa fa-medium"></i></a></li>
+            <li><a class="social-icon" target="_blanck" href="{{ site.author.linkedin}}" title="Marco Boretto on LinkedIn"> <i class="fa fa-linkedin"></i></a></li>
+            <!--<li><a href="" class="social-icon"> <i class="fa fa-rss"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-youtube"></i></a></li>
+            <li><a href="" class="social-icon"> <i class="fa fa-google-plus"></i></a></li>-->
+        </ul>
+    </div>
+
+    <p>&copy; {{ site.time | date: '%Y' }} <a href="{{ site.baseurl }}credits">credits</a></p>
+  </div>
+</div>

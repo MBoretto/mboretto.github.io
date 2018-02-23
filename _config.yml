@@ -1,0 +1,30 @@
+# Dependencies
+markdown:         redcarpet
+highlighter:      pygments
+
+# Plugins
+plugins: [jekyll-paginate, jekyll-gist]
+
+# Permalinks
+permalink:        pretty
+#relative_permalinks: true
+
+# Setup
+title:            Marco Boretto
+tagline:          ''
+description:      'Ph.D. Working at CERN'
+baseurl:          /
+
+author:
+  name:           'Marco Boretto'
+  url:            'mboretto.github.io'
+  email:          'marco.bore@gmail.com'
+  github:         'https://github.com/mboretto'
+  medium:         'https://medium.com/@Mboretto'
+  facebook:       'http://www.facebook.com/marcobore'
+  twitter:        'https://twitter.com/marcoboretto'
+  linkedin:       'https://it.linkedin.com/in/marcoboretto'
+
+paginate:         5
+
+

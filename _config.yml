@@ -1,6 +1,6 @@
 # Dependencies
-markdown:         redcarpet
-highlighter:      pygments
+#markdown:         redcarpet
+highlighter:      rouge
 
 # Plugins
 plugins: [jekyll-paginate, jekyll-gist]
@@ -13,7 +13,7 @@ permalink:        pretty
 title:            Marco Boretto
 tagline:          ''
 description:      'Ph.D. Working at CERN'
-baseurl:          ''
+baseurl:          
 
 author:
   name:           'Marco Boretto'
